@@ -247,7 +247,7 @@ export default function StockPage() {
               </span>
               <input
                 type="text"
-                placeholder="Pesquisar por código, nome ou categoria…"
+                placeholder="Pesquisar por código ou nome…"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="h-10 w-full rounded-lg border border-ink-200 bg-white pl-10 pr-3 text-sm text-ink-900 placeholder:text-ink-400 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400"
@@ -323,11 +323,6 @@ export default function StockPage() {
                           </span>
                           {isLow && <Badge tone="warning">Stock baixo</Badge>}
                         </div>
-                        {row.material.category && (
-                          <span className="text-xs text-ink-400">
-                            {row.material.category}
-                          </span>
-                        )}
                       </td>
                       {warehouses.map((w) => (
                         <td
