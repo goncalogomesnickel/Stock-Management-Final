@@ -124,8 +124,7 @@ export default function StockPage() {
   const filteredRows = rows.filter(
     (r) =>
       r.material.name.toLowerCase().includes(search.toLowerCase()) ||
-      r.material.code.toLowerCase().includes(search.toLowerCase()) ||
-      (r.material.category ?? '').toLowerCase().includes(search.toLowerCase())
+      r.material.code.toLowerCase().includes(search.toLowerCase())
   );
 
   const grandTotal = filteredRows.reduce((s, r) => s + r.total, 0);
