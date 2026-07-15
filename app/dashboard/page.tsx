@@ -14,6 +14,7 @@ import { useRequireAuth } from '@/lib/auth';
 import type {
   DashboardStats,
   Movement,
+  MovementType,
   Inventory,
   Material,
 } from '@/lib/types';
