@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Icon, IconName } from './ui/Icon';
 import { useAuth } from '@/lib/auth';
@@ -32,9 +33,15 @@ export function Sidebar() {
   const navContent = (
     <>
       <div className="flex items-center gap-3 px-6 py-5">
-        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500 text-white shadow-sm">
-          <Icon name="package" size={22} />
-        </div>
+      <div className="flex h-10 w-10 items-center justify-center">
+        <Image
+          src="/logonickel.png"
+          alt="Nickel Stock"
+          width={44}
+          height={44}
+          priority
+      />
+</div>
         <div>
           <p className="text-sm font-bold text-white">Nickel Stock</p>
           <p className="text-xs text-ink-400">Gestão de Stock</p>
@@ -87,9 +94,15 @@ export function Sidebar() {
       {/* Mobile top bar */}
       <div className="sticky top-0 z-30 flex items-center justify-between border-b border-ink-200 bg-white px-4 py-3 lg:hidden">
         <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-500 text-white">
-            <Icon name="package" size={18} />
-          </div>
+          <div className="flex h-8 w-8 items-center justify-center">
+            <Image
+              src="/logonickel.png"
+              alt="Nickel Stock"
+              width={36}
+              height={36}
+              priority
+        />
+</div>
           <span className="text-sm font-bold text-ink-900">Nickel Stock</span>
         </div>
         <button

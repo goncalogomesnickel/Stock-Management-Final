@@ -6,10 +6,12 @@ import { AuthProvider } from '@/lib/auth';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Nickel Stock — Gestão de Stock',
+  title: 'Nickel Stock – Gestão de Stock',
   description: 'Sistema interno de gestão de stock para armazéns Nickel.',
+  icons: {
+    icon: '/favicon.png',
+  },
 };
-
 export default function RootLayout({
   children,
 }: {
