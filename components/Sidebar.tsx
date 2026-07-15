@@ -36,7 +36,7 @@ export function Sidebar() {
           <Icon name="package" size={22} />
         </div>
         <div>
-          <p className="text-sm font-bold text-white">StockFlow</p>
+          <p className="text-sm font-bold text-white">Nickel Stock</p>
           <p className="text-xs text-ink-400">Gestão de Stock</p>
         </div>
       </div>
@@ -90,7 +90,7 @@ export function Sidebar() {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-500 text-white">
             <Icon name="package" size={18} />
           </div>
-          <span className="text-sm font-bold text-ink-900">StockFlow</span>
+          <span className="text-sm font-bold text-ink-900">Nickel Stock</span>
         </div>
         <button
           onClick={() => setMobileOpen(true)}
