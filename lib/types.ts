@@ -26,7 +26,7 @@ export type Inventory = {
   warehouse?: Warehouse;
 };
 
-export type MovementType = 'IN' | 'OUT' | 'TRANSFER';
+export type MovementType = 'IN' | 'OUT';
 
 export type Movement = {
   id: string;
