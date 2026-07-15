@@ -467,12 +467,12 @@ export default function StockPage() {
 
           {moveForm.type === 'OUT' && (
             <Input
-              label="Destino / Obra (opcional)"
+              label="Destino (opcional)"
               value={moveForm.destination}
               onChange={(e) =>
                 setMoveForm({ ...moveForm, destination: e.target.value })
               }
-              placeholder="e.g. Obstra Avenida"
+              placeholder="e.g. POS x ou Carro"
             />
           )}
 
