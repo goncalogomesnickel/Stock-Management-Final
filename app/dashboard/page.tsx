@@ -113,7 +113,6 @@ export default function DashboardPage() {
       return { icon: 'trend-up' as const, tone: 'success' as const };
     if (type === 'OUT')
       return { icon: 'trend-down' as const, tone: 'danger' as const };
-    return { icon: 'transfer' as const, tone: 'info' as const };
   };
 
   return (
@@ -215,11 +214,7 @@ export default function DashboardPage() {
                         {m.material?.name ?? 'Material desconhecido'}
                       </p>
                       <p className="text-xs text-ink-500">
-                        {m.type === 'TRANSFER'
-                          ? `${m.from_warehouse?.name ?? '—'} → ${
-                              m.to_warehouse?.name ?? '—'
-                            }`
-                          : m.type === 'IN'
+                        {m.type === 'IN'
                           ? `Entrada em ${m.to_warehouse?.name ?? '—'}`
                           : `Saída de ${m.from_warehouse?.name ?? '—'}`}
                       </p>
