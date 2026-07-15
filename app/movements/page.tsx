@@ -18,12 +18,11 @@ const typeConfig: Record<
   {
     label: string;
     tone: 'success' | 'danger' | 'info';
-    icon: 'trend-up' | 'trend-down' | 'transfer';
+    icon: 'trend-up' | 'trend-down';
   }
 > = {
   IN: { label: 'Entrada', tone: 'success', icon: 'trend-up' },
   OUT: { label: 'Saída', tone: 'danger', icon: 'trend-down' },
-  TRANSFER: { label: 'Transferência', tone: 'info', icon: 'transfer' },
 };
 
 type MovementWithUser = Movement & { user?: User };
@@ -106,11 +105,6 @@ export default function MovementsPage() {
       label: 'Saídas',
       value: 'OUT',
       count: movements.filter((m) => m.type === 'OUT').length,
-    },
-    {
-      label: 'Transferências',
-      value: 'TRANSFER',
-      count: movements.filter((m) => m.type === 'TRANSFER').length,
     },
   ];
 
