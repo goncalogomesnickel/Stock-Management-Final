@@ -108,11 +108,12 @@ export default function DashboardPage() {
     load();
   }, []);
 
-  const movementIcon = (type: string) => {
-    if (type === 'IN')
+  const movementIcon = (type: MovementType) => {
+    if (type === 'IN') {
       return { icon: 'trend-up' as const, tone: 'success' as const };
-    if (type === 'OUT')
-      return { icon: 'trend-down' as const, tone: 'danger' as const };
+    }
+  
+    return { icon: 'trend-down' as const, tone: 'danger' as const };
   };
 
   return (
