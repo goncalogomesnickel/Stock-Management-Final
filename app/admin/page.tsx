@@ -20,6 +20,7 @@ type Tab = 'materials' | 'users';
 
 type MaterialForm = {
   code: string;
+  code_icp: string;
   name: string;
   minimum_stock: string;
   price: string;
@@ -28,6 +29,7 @@ type MaterialForm = {
 
 const emptyMaterialForm: MaterialForm = {
   code: '',
+  code_icp: '',
   name: '',
   minimum_stock: '10',
   price: '0',
@@ -126,6 +128,7 @@ export default function AdminPage() {
     setEditingMat(m);
     setMatForm({
       code: m.code,
+      code_icp: m.code_icp ?? '',
       name: m.name,
       minimum_stock: String(m.minimum_stock),
       price: String(m.price),
@@ -139,6 +142,7 @@ export default function AdminPage() {
     setMatSaving(true);
     const payload = {
       code: matForm.code,
+      code_icp: matForm.code_icp,
       name: matForm.name,
       minimum_stock: parseInt(matForm.minimum_stock, 10) || 0,
       price: parseFloat(matForm.price) || 0,
@@ -349,10 +353,19 @@ export default function AdminPage() {
               columns={[
                 {
                   key: 'code',
-                  header: 'Referência',
+                  header: 'Referência Nickel',
                   render: (m) => (
                     <span className="font-mono text-xs font-medium text-ink-600">
                       {m.code}
+                    </span>
+                  ),
+                },
+                {
+                  key: 'code_icp',
+                  header: 'Referência ICP',
+                  render: (m) => (
+                    <span className="font-mono text-xs font-medium text-ink-600">
+                      {m.code_icp ?? '—'}
                     </span>
                   ),
                 },
@@ -573,23 +586,34 @@ export default function AdminPage() {
         }
       >
         <div className="space-y-4">
+<div className="grid grid-cols-2 gap-4">
+  <Input
+    label="Referência Nickel"
+    name="code"
+    value={matForm.code}
+    onChange={(e) => setMatForm({ ...matForm, code: e.target.value })}
+    placeholder="e.g. REF-001"
+  />
+
+  <Input
+    label="Referência ICP"
+    name="code_icp"
+    value={matForm.code_icp}
+    onChange={(e) =>
+      setMatForm({ ...matForm, code_icp: e.target.value })
+    }
+    placeholder="e.g. ICP-0001"
+  />
+</div>
+
+<Input
+  label="Nome"
+  name="name"
+  value={matForm.name}
+  onChange={(e) => setMatForm({ ...matForm, name: e.target.value })}
+  placeholder="e.g. Totem Reborn"
+/>
           <div className="grid grid-cols-2 gap-4">
-            <Input
-              label="Referência"
-              name="code"
-              value={matForm.code}
-              onChange={(e) => setMatForm({ ...matForm, code: e.target.value })}
-              placeholder="e.g. REF-001"
-            />
-          </div>
-          <Input
-            label="Nome"
-            name="name"
-            value={matForm.name}
-            onChange={(e) => setMatForm({ ...matForm, name: e.target.value })}
-            placeholder="e.g. Totem Reborn"
-          />
-          <div className="grid-cols-2">
             <Input
               label="Stock Mínimo"
               name="minimum_stock"

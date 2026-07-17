@@ -8,6 +8,7 @@ export type Warehouse = {
 export type Material = {
   id: string;
   code: string;
+  code_icp: string | null;
   name: string;
   unit: string | null;
   minimum_stock: number;

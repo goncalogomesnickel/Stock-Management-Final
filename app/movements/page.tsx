@@ -149,7 +149,7 @@ export default function MovementsPage() {
             </span>
             <input
               type="text"
-              placeholder="Pesquisar por código, material, armazém, utilizador…"
+              placeholder="Pesquisar por referência, material, armazém, utilizador…"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="h-10 w-full rounded-lg border border-ink-200 bg-white pl-10 pr-3 text-sm text-ink-900 placeholder:text-ink-400 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400"
@@ -181,10 +181,19 @@ export default function MovementsPage() {
               },
               {
                 key: 'code',
-                header: 'Código',
+                header: 'Referência Nickel',
                 render: (m) => (
                   <span className="font-mono text-xs font-medium text-ink-600">
                     {m.material?.code ?? '—'}
+                  </span>
+                ),
+              },
+              {
+                key: 'code_icp',
+                header: 'Referência ICP',
+                render: (m) => (
+                  <span className="font-mono text-xs font-medium text-ink-600">
+                    {m.material?.code_icp ?? '-'}
                   </span>
                 ),
               },

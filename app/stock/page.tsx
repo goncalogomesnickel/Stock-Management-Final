@@ -247,7 +247,7 @@ export default function StockPage() {
               </span>
               <input
                 type="text"
-                placeholder="Pesquisar por código ou nome…"
+                placeholder="Pesquisar por referência ou nome…"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="h-10 w-full rounded-lg border border-ink-200 bg-white pl-10 pr-3 text-sm text-ink-900 placeholder:text-ink-400 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400"
@@ -276,7 +276,10 @@ export default function StockPage() {
               <thead>
                 <tr className="border-b border-ink-100 bg-ink-50/50">
                   <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-ink-500">
-                    Código
+                    Referência Nickel
+                  </th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-ink-500">
+                    Referência ICP
                   </th>
                   <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-ink-500">
                     Material
@@ -314,6 +317,11 @@ export default function StockPage() {
                       <td className="px-4 py-3.5 text-sm">
                         <span className="font-mono text-xs font-medium text-ink-600">
                           {row.material.code}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3.5 text-sm">
+                        <span className="font-mono text-xs font-medium text-ink-600">
+                           {row.material.code_icp ?? '-'}
                         </span>
                       </td>
                       <td className="px-4 py-3.5 text-sm">
@@ -365,7 +373,7 @@ export default function StockPage() {
               <tfoot>
                 <tr className="border-t-2 border-ink-200 bg-ink-50">
                   <td
-                    colSpan={warehouses.length + 1}
+                    colSpan={warehouses.length + 2}
                     className="px-4 py-3.5 text-sm font-semibold text-ink-700"
                   >
                     Total Geral
