@@ -60,7 +60,6 @@ export default function StockPage() {
       supabase
         .from('materials')
         .select('*')
-        .eq('active', true)
         .order('name', { ascending: true }),
 
       supabase
